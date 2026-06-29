@@ -1,0 +1,454 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Refrigerantes | Kaffee Für Alle</title>
+
+    <!-- Fonte Cinzel Decorative -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="style.css">
+
+</head>
+<STyle>/* ===========================
+        FONTES
+        =========================== */
+
+        @font-face {
+            font-family: "TAM_NIMBUS";
+            src: url("fonts/TAM_NIMBUS.otf") format("opentype");
+            font-weight: normal;
+            font-style: normal;
+        }
+
+        *{
+            margin:0;
+            padding:0;
+            box-sizing:border-box;
+        }
+
+        :root{
+
+            --bege:#efd39b;
+            --marrom:#5b220b;
+            --branco:#ffffff;
+
+        }
+
+        body{
+
+            background:#4b1d08;
+
+            font-family:"Cinzel Decorative", serif;
+
+            display:flex;
+
+            justify-content:center;
+
+            align-items:center;
+
+            min-height:100vh;
+
+            padding:20px;
+
+        }
+
+        /* ===========================
+        CARDÁPIO
+        =========================== */
+
+        .pagina{
+
+            width:min(1600px,100%);
+
+            background:var(--bege);
+
+            border:4px solid var(--branco);
+
+            outline:2px solid rgba(255,255,255,.5);
+
+            position:relative;
+
+            padding:70px 60px;
+
+        }
+
+        /* ===========================
+        BOTÃO VOLTAR
+        =========================== */
+
+        .voltar{
+
+            position:absolute;
+
+            top:25px;
+
+            left:25px;
+
+            width:72px;
+
+            height:72px;
+
+            border-radius:50%;
+
+            background:var(--marrom);
+
+            color:var(--bege);
+
+            display:flex;
+
+            justify-content:center;
+
+            align-items:center;
+
+            text-decoration:none;
+
+            transition:.35s;
+
+        }
+
+        .voltar:hover{
+
+            transform:scale(1.08);
+
+        }
+
+        .voltar svg{
+
+            width:38px;
+
+            height:38px;
+
+        }
+
+        /* ===========================
+        DUAS COLUNAS
+        =========================== */
+
+        .menu{
+
+            display:grid;
+
+            grid-template-columns:repeat(2,1fr);
+
+            gap:90px;
+
+        }
+
+        /* ===========================
+        TÍTULOS
+        =========================== */
+
+        h1{
+
+            text-align:center;
+
+            color:var(--marrom);
+
+            font-size:clamp(2.8rem,5vw,5.8rem);
+
+            margin-bottom:45px;
+
+            letter-spacing:2px;
+
+        }
+
+        /* ===========================
+        LISTA
+        =========================== */
+
+        .lista{
+
+            display:flex;
+
+            flex-direction:column;
+
+            gap:20px;
+
+        }
+
+        .item{
+
+            display:grid;
+
+            grid-template-columns:1fr auto;
+
+            align-items:center;
+
+            gap:25px;
+
+        }
+
+        /* ===========================
+        NOMES
+        =========================== */
+
+        .item span{
+
+            color:var(--marrom);
+
+            font-family:"Cinzel Decorative", serif;
+
+            font-size:clamp(1rem,1.6vw,2rem);
+
+            line-height:1.2;
+
+        }
+
+        /* ===========================
+        PREÇOS
+        =========================== */
+
+        .item strong{
+
+            color:var(--marrom);
+
+            font-family:"TAM_NIMBUS";
+
+            font-size:clamp(2rem,2.8vw,4rem);
+
+            font-weight:normal;
+
+        }
+
+        /* ===========================
+        ESPAÇO
+        =========================== */
+
+        .espaco{
+
+            height:20px;
+
+        }
+
+        /* ===========================
+        RESPONSIVO
+        =========================== */
+
+        @media (max-width:1100px){
+
+        .menu{
+
+            gap:45px;
+
+        }
+
+        }
+
+        @media (max-width:900px){
+
+        .pagina{
+
+            padding:90px 35px 40px;
+
+        }
+
+        .menu{
+
+            grid-template-columns:1fr;
+
+            gap:60px;
+
+        }
+
+        h1{
+
+            font-size:clamp(2.5rem,8vw,4rem);
+
+        }
+
+        .item span{
+
+            font-size:clamp(1rem,3vw,1.5rem);
+
+        }
+
+        .item strong{
+
+            font-size:clamp(1.8rem,5vw,3rem);
+
+        }
+
+        }
+
+        @media (max-width:600px){
+
+        .pagina{
+
+            padding:80px 20px 30px;
+
+        }
+
+        .voltar{
+
+            width:58px;
+
+            height:58px;
+
+        }
+
+        .voltar svg{
+
+            width:28px;
+
+            height:28px;
+
+        }
+
+        .item{
+
+            gap:15px;
+
+        }
+
+        .item span{
+
+            font-size:1rem;
+
+        }
+
+        .item strong{
+
+            font-size:2rem;
+
+        }
+</STyle>
+
+<body>
+
+    <main class="pagina">
+
+        <!-- Botão voltar -->
+
+        <a href="#" class="voltar">
+
+            <svg xmlns="http://www.w3.org/2000/svg"
+                 width="42"
+                 height="42"
+                 fill="none"
+                 viewBox="0 0 24 24">
+
+                <path d="M15 4L7 12L15 20"
+                    stroke="currentColor"
+                    stroke-width="2.8"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"/>
+
+            </svg>
+
+        </a>
+
+        <section class="menu">
+
+            <!-- ESQUERDA -->
+
+            <div class="coluna">
+
+                <h1>LATAS</h1>
+
+                <div class="lista">
+
+                    <div class="item">
+                        <span>COCA-COLA ZERO</span>
+                        <strong>6,50</strong>
+                    </div>
+
+                    <div class="item">
+                        <span>COCA-COLA</span>
+                        <strong>7,00</strong>
+                    </div>
+
+                    <div class="item">
+                        <span>PEPSI-COLA</span>
+                        <strong>7,00</strong>
+                    </div>
+
+                    <div class="item">
+                        <span>FANTA UVA</span>
+                        <strong>6,50</strong>
+                    </div>
+
+                    <div class="item">
+                        <span>SPRITE</span>
+                        <strong>6,00</strong>
+                    </div>
+
+                    <div class="espaco"></div>
+
+                    <div class="item">
+                        <span>SUKITA DE LARANJA</span>
+                        <strong>5,00</strong>
+                    </div>
+
+                    <div class="item">
+                        <span>GUARANÁ ANTARCTICA</span>
+                        <strong>5,00</strong>
+                    </div>
+
+                </div>
+
+            </div>
+
+            <!-- DIREITA -->
+
+            <div class="coluna">
+
+                <h1>GASOSAS</h1>
+
+                <div class="lista">
+
+                    <div class="item">
+                        <span>COCA-COLA ZERO 1L</span>
+                        <strong>12,00</strong>
+                    </div>
+
+                    <div class="item">
+                        <span>COCA-COLA 1L</span>
+                        <strong>10,00</strong>
+                    </div>
+
+                    <div class="item">
+                        <span>PEPSI-COLA 2L</span>
+                        <strong>15,00</strong>
+                    </div>
+
+                    <div class="item">
+                        <span>FANTA UVA 2L</span>
+                        <strong>6,50</strong>
+                    </div>
+
+                    <div class="item">
+                        <span>SPRITE 2L</span>
+                        <strong>6,00</strong>
+                    </div>
+
+                    <div class="espaco"></div>
+
+                    <div class="item">
+                        <span>GUARANÁ JESUS 1L</span>
+                        <strong>10,00</strong>
+                    </div>
+
+                    <div class="item">
+                        <span>GUARANÁ ANTARCTICA 2L</span>
+                        <strong>15,00</strong>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+</body>
+
+</html>
